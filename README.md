@@ -1,50 +1,73 @@
-# React + TypeScript + Vite
+# Infinite Scroll Project with Local Editing and Deletion
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This project fetches a list of items from a server and displays them with infinite scroll. As the user scrolls, additional items are loaded dynamically. Users can also locally edit and delete items in the list. The project includes:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Infinite scrolling** with gradual item loading.
+- **Local item editing and deletion**.
+- **Unit testing** for key functionalities using Jest and React Testing Library.
 
-## Expanding the ESLint configuration
+## Deployment
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The project is deployed on GitHub Pages. You can view it [here](https://cosmic-faloodeh-0dfdb7.netlify.app/).
 
-- Configure the top-level `parserOptions` property like this:
+## Technologies Used
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **TypeScript**
+- **React** with **MobX** for state management
+- **CSS Modules** for scoped styling
+- **Vite** for bundling
+- **Jest** and **React Testing Library** for testing
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Requirements
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **API**: GitHub API
+- **UI Kit**: This project uses [Material UI](https://mui.com/) for consistent design.
+- **Authentication**: Implemented with your GitHub API token.
+- **Manual list handling**: The infinite scroll and list functionality are implemented without relying on third-party libraries for scrolling.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Setup and Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/LaraNU/techno-test-vk.git
+   cd techno-test-vk
+   ```
+
+2. Install dependencies:
+
+   ```
+   npm install
+   ```
+
+3. Add a `.env` file with your GitHub API token:
+
+   ```
+   VITE_GITHUB_TOKEN=your_github_token
+   ```
+
+4. Run the project:
+
+   ```
+   npm run dev
+   ```
+
+5. To run tests:
+   ```
+   npm run test
+   ```
+
+## Usage
+
+- **Infinite Scrolling**: The list will automatically load more items as you scroll down.
+- **Local Editing and Deletion**: Hover over an item to reveal edit and delete options. Changes are applied locally.
+
+## Testing
+
+Unit tests are located in the `__tests__` folder.
+
+Run tests using:
+
+`npm run test`
