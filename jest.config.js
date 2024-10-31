@@ -8,4 +8,5 @@ export default {
   moduleNameMapper: {
     "\\.(css|less|scss|sass)$": "identity-obj-proxy",
   },
+  setupFilesAfterEnv: ["jest-fetch-mock"],
 };
